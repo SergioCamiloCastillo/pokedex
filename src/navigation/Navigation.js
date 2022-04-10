@@ -6,12 +6,14 @@ import FavoriteNavigation from "./FavoriteNavigation";
 import PokedexNavigation from "./PokedexNavigation";
 import AccountNavigation from "./AccountNavigation";
 
-
 const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator
+      initialRouteName="Pokedex"
+      screenOptions={{ headerShown: false }}
+    >
       <Tab.Screen
         name="Favorite"
         component={FavoriteNavigation}
@@ -45,7 +47,7 @@ export default function Navigation() {
 function renderPokeball() {
   return (
     <Image
-      style={{ width: 75, height: 75, top:-15 }}
+      style={{ width: 75, height: 75, top: -15 }}
       source={require("../assets/pokeball.png")}
     />
   );
